@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belken Document Viewer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #5a5a5a;
+        }
+        .pdf-container {
+            width: 100%;
+            max-width: 900px; /* Or your preferred max width */
+            height: 80vh;   /* 80% of the viewport height */
+            margin: 20px auto; /* Center the container */
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        object {
+            width: 100%;
+            height: 100%;
+            border: none; /* Removes any default border from the object tag itself */
+        }
+        .fallback-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        /* IF YOU WANT THE PDF TO TRY AND FILL THE WHOLE PAGE (remove .pdf-container styles above if you use this)
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* To prevent scrollbars from the HTML body if PDF takes full space */
+        }
+        .pdf-container-fullpage {
+            width: 100vw; /* 100% of viewport width */
+            height: 100vh; /* 100% of viewport height */
+            border: none;
+        }
+        .pdf-container-fullpage object {
+            width: 100%;
+            height: 100%;
+        }
+        */
+    </style>
+</head>
+<body>
+    <h1>Belken Document</h1>
+
+    <p>The PDF is displayed below. For the final version on your website, you'll replace <code>belken_document.pdf</code> with the full GitHub Pages URL.</p>
+
+    <!-- This is how you'd embed it for local testing -->
+    <div class="pdf-container">
+        <object data="belken_document.pdf" type="application/pdf">
+            <p class="fallback-message">Your browser does not support embedded PDFs.
+               You can <a href="belken_document.pdf">download the PDF directly</a>.
+            </p>
+        </object>
+    </div>
+
+    <!-- 
+        If you want to use an iframe instead (often more reliable):
+    <div class="pdf-container">
+        <iframe src="belken_document.pdf" type="application/pdf" title="Belken Document">
+            <p class="fallback-message">Your browser does not support embedded PDFs.
+               You can <a href="belken_document.pdf">download the PDF directly</a>.
+            </p>
+        </iframe>
+    </div>
+    -->
+
+    <p style="text-align:center; margin-top: 30px;">
+        This page is for testing the PDF embedding.
+    </p>
+
+</body>
+</html>
